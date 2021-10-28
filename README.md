@@ -2,7 +2,7 @@
 ## Overview  
 An assignment to render a swim Race using Threejs and Javascript  
 
-##Instructions
+## Instructions
 Unzip the files and locate the 'assignment3' html doc in 'web3d assignment 3' folder. Open it with internet explorer and start the animations with the key below.
 ## Key Bindings  
 Key| Control
