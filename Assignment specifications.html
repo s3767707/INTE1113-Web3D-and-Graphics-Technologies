@@ -1,0 +1,372 @@
+
+<!-- saved from url=(0066)http://titan.csit.rmit.edu.au/~e20068/teaching/w3d/ass3/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>Web3D Assignment 3</title>
+    <style type="text/css">
+      body{
+      font-family: sans-serif;
+      }
+      .ant-div{
+      width: 500px;
+      height: 400px;
+      border: 1px solid black;
+      padding: 5px;
+      padding-bottom: 25px;
+      }
+      .ant-diagram{
+      width:100%;
+      height:100%;
+      }
+      .ant-diagram-hidden{
+      width:100%;
+      height:100%;
+      display:none;
+      }
+      .list{
+      padding:0px;
+      margin:0px;
+      }
+      td{
+        padding:3px;
+      }
+      .hidden{
+        display:none;
+      }
+      .showing{
+        display:block;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>
+      Web3D Assignment 3<br>
+      Due Date: Mid week 14 Wed 10th June 9pm<br>
+      Assessment: 33%<br>
+      Type: Individual<br>
+      Submission: Canvas<br>
+      Theme: Swim Race using Threejs and Javascript<br>
+    </h1>
+
+    <video controls="">
+      <source src="./swim-race.webm" type="video/webm">
+    </video>
+    <br>
+    <img width="400" src="./Web3D Assignment 3_files/swim-race1.png" alt="swim-race1.png">
+    <img width="400" src="./Web3D Assignment 3_files/swim-race2.png" alt="swim-race2.png">
+    <br>
+    <img width="400" src="./Web3D Assignment 3_files/swim-race3.png" alt="swim-race3.png">
+    <img width="400" src="./Web3D Assignment 3_files/swim-race4.png" alt="swim-race4.png">
+
+
+
+    <h2>Clarifications and Corrections</h2>
+
+    <ul>
+      <li>
+	3/5/20: Added medley swim stroke video and clarified requirement.
+      </li>
+    </ul>
+    
+    
+    <h2>Overview</h2>
+
+    <p>
+      This assignment uses three.js to implement a swim race in an
+      olympic size pool. In part it builds on assignment 2.
+    </p>
+
+    <p>
+      In a basic assignment the swimmers will just glide up and down
+      the pool with random speeds with no swim stroke action.
+    </p>
+    <p>
+      Next step up is to implement a simple swim stroke animation,
+      where arms simply rotate about the shoulder.
+    </p>
+    <p>
+      Then next step up is to implement keyframe animation in
+      Javascript, instead of using an inbuilt or library provided
+      keyframe engine as in assignment 1, along with a keyframed
+      swimming action. As shown in the images and video above.
+    </p>
+
+    <p>
+      The highest level assignment is to implement a <em>medley</em>
+      swim race.  A medley is a swim race of four different strokes:
+      backstroke, breastroke, butterfly and freestyle. All four
+      swim strokes are shown in the video below, and should be implemented
+      using keyframe animation. 
+    </p>
+
+    <iframe width="50%" height="50%" src="./Web3D Assignment 3_files/1rQ8iEGd2jk.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+    </iframe>
+    
+
+
+    <h2>Details</h2>
+
+    
+    <p>
+      Extend your program from assignment 2 to render a swim race
+      with eight swimmers in a pool. 
+    </p>
+    <ul>
+      <li>
+	A swimming race with 8 swimmers in a 20m x 50m, 8
+	× 2.5m lane wide, 2.5m deep olympic pool. Random numbers
+	are to be used to generated the speed of the swimmers, which may
+	vary in a race. The swimmers do two lengths of the
+	pool, as though in a 100m race. In the HD level assignment
+	swimmers do a 200m medley which is 4 laps, each with a
+	different stroke: butterfly, backstroke, breaststroke and freestyle.
+      </li>
+      <li>
+	Texture mapping of the pool and the swimmers.
+      </li>
+      <li>
+	Animating the swimmers in two ways: (1) simply moving them
+	along the length of the pool (and back) with no swim stroke action 
+	(2) performing a swim stroke action using key frame animaton
+	similar to the first assignment but with the keyframe animation
+	implemented in Javascript.
+      </li>
+    </ul>
+
+    
+      
+    <h2>
+      Further Details
+    </h2>
+
+    <ul>
+      <li>
+	Use your hierarchical swimmer model from assignment 2.
+	In case you did not get that done, 
+	use a block to represent the swimmers.
+      </li>
+      <li>
+	Include
+	the same rendering controls: axes, lighting, wireframe.
+      </li>
+      <li>
+        The figure must be properly constructed according to the same
+        hierarchy, to allow for easy animation. The figure must have a
+        root node such as the body or a blank container node to allow the
+        whole swimmer to be moved around the scene.
+      </li>
+      <li>
+        There should be a root scene object
+	of which all components are children so that any
+        transformations will transform the entire scene.
+      </li>
+      <li>
+        The swimmer should be able to be easily duplicated using a
+        createSwimmer() function or something similar, such as the
+        clone() method on the root node of the swimmer.
+      </li>
+      <li>
+	The race should start when the 'g' button is pressed, not before.
+      </li>
+      <li>
+        The swimmers will race from one end of the pool to the
+	other, and then back. Each swimmer
+        will have a random speed which can vary as the race proceeds.
+	Use the speed to change the position of the swimmers using
+	time deltas. 
+      </li>
+      <li>
+	The swimmers color should be a shade of pink 0xff9966 ( or
+	(255, 153, 102) or (1, 0.6, 0.4)).
+      </li>
+      <li>
+	A simple swim stroke animation approach is to have the arms constantly
+	rotating around the shoulder.
+      </li>
+      <li>
+        A detailed swimmer stroke animation should be keyframed,
+	as in assignment 1, with a keyframe animation engine 
+	implemented in Javascript using the interpolator discussed in
+	the lectures and tutorials, and the functions:
+        <pre>        function interpolate(keys, values, key)
+        function lerp(k1, v1, k2, v2, k)
+        function findInterval(keys, key)
+	</pre>
+      </li>
+      <li>
+        Code should be simply annotated so that its easy to identify
+        the different areas of your program. The assignment should be
+        split into several logical files based on the content of the
+        file.
+      </li>
+      
+    </ul>
+    <h2>
+      Textures
+    </h2>
+    <p>
+      The pool is to be textured with tiles using the texture image
+      below, but <a href="./Web3D Assignment 3_files/tiles.jpg">download</a> and use the full
+      size tile image. This tiles image is used in
+      	the <a href="http://madebyevan.com/webgl-water/">the webgl
+      	water demo</a>, but was created by
+      <a href="http://www.flickr.com/photos/zooboing/3682834083/">zooboing</a> on Flickr</p>
+      
+    <p></p>
+    <img width="300" height="300" src="./Web3D Assignment 3_files/tiles.jpg" alt="pool tiles">
+    <p>
+    </p>
+    <p>
+      The swimmers torsos are to be textured - both front and back:
+    </p>
+    <img width="200" height="200" src="./Web3D Assignment 3_files/swimmer-front.png" alt="swimmer front">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/swimmer-back.png" alt="swimmer back">
+    <p>
+      Use the swim suits/bathers below (thanks to Clark the Costume Designer!):
+    </p>
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style0.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style1.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style2.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style3.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style4.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style5.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style6.png" alt="swim suit style 0">
+    <img width="200" height="200" src="./Web3D Assignment 3_files/style7.png" alt="swim suit style 0">
+    <p>
+      <a href="http://titan.csit.rmit.edu.au/~e20068/teaching/w3d/ass3/swim-suits.zip">Download all of them at full size</a>
+    </p>
+
+    <h2>
+      General Requirements
+    </h2>
+    <ul>
+      <li>
+	Use strict Javascript
+      </li>
+      <li>
+	The code must be valid JavaScript (errors/warnings will result
+	in deductions).
+      </li>
+      <li>
+	Your assignment is assessed using recent versions of chrome or
+	firefox, make sure your assignment will run correctly on them,
+	and in the Sutherland lab.
+      </li>
+    </ul>
+
+    
+    <h2>Late Submission</h2>
+    <p>
+      Late submissions receive a 10% per day
+      penalty (calculated hourly on a pro rata basis, starting 9:00am
+      next working day, i.e. Mon). Any assignment not submitted by
+      9:00pm the next Friday will receive 0 marks.
+    </p>
+    <h2>Submission</h2>
+    <p>
+      Name your submission using your student number and the
+      assignment number. Put your files into a single
+      zip/rar archive to submit a single file. Use canvas to submit.
+    </p>
+
+    <h2>Rubric/Marking guide</h2>
+
+    <p>
+      How well features are implemented will determine whether an
+      assignment is in the upper or lower range of its mark.
+    </p>
+    <p>
+      Subject to change
+    </p>
+    <ul style="list-style-type:disc; line-heigth: 100%; margin-top: 1em;margin-bottom: 1em;">
+      <li>
+	PA: 
+	<ul>
+	  <li>
+	    Pool with water, lane ropes and lines, and tile texture.
+	  </li>
+	  <li>
+            Multiple swimmers, modelled as simple blocks, in the water at the
+            start of the pool.
+	  </li>
+	  <li>
+	    Swimming race where swimmers move with different speeds
+	    generated by random numbers.
+	  </li>
+	</ul>
+      </li>
+      <li>
+	CR: 
+	<ul>
+	  <li>
+	    Swimmers modelled as in assignment 2.
+	  </li>
+	  <li>
+	    Rendering controls: wireframe / filled, lighting on / off,
+	    axes on / off.
+	  </li>
+	  <li>
+	    "Windmill" swim stroke animation where arms just rotate
+	    full circles around shoulder with constant rotational speed,
+	    legs rotate about hips from 0 to 30 degrees and back to 0.
+	  </li>
+	</ul>
+      </li>
+      <li>
+	DI: 
+	<ul>
+	  <li>
+            Keyframe animation engine.
+	  </li>
+	  <li>
+            Swim stroke using key frame animation.
+	  </li>
+	</ul>
+      </li>
+      <li>
+	HD: 
+	<ul>
+	  <li>
+            Different swim stroke animations: breastroke, backstroke,
+	    butterfly and freestyle.
+	  </li>
+	  <li>
+            Medley 200m 4 lap swim race with each of the four strokes.
+	  </li>
+	</ul>
+      </li>
+    </ul>
+
+    <h2>
+      Course Learning Objectives and Outcomes
+    </h2>
+    <p>
+      This assignment addresses the course learning objectives and outcomes:
+      </p><ul>
+	<li>
+	  apply knowledge and skills of fundamentals of 3D graphics,
+	  including geometry modelling, hierarchical transformations,
+	  lighting and shading, texturing, and simple animation to Web
+	  3D and graphics technologies
+	</li>
+	<li>
+	  design and develop web 3D and graphics using X3D, WebGL and
+	  Javascript languages
+	</li>
+	<li>
+	  build 3D web applications and solve related problems
+	  construct scenes using the scene graph concept and
+	  facilities in WebGL and X3D
+	</li>
+	<li>
+	  use Javascript at a basic level to build WebGL applications
+	  and perform basic 3D graphics programming
+	</li>
+      </ul>
+  
+
+
+</body></html>
